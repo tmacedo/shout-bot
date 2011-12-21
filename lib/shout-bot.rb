@@ -51,7 +51,7 @@ class ShoutBot
     raise ArgumentError unless block_given?
 
     @socket = TCPSocket.open(server, port || 6667)
-    @socket.puts "PASSWORD #{password}" if password
+    @socket.puts "PASS #{password}" if password
     @socket.puts "NICK #{nick}"
     @socket.puts "USER #{nick} #{nick} #{nick} :#{nick}"
     sleep 1
